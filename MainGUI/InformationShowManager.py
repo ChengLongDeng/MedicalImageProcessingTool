@@ -1,9 +1,7 @@
 from PyQt5.QtWidgets import QLabel, QVBoxLayout, QHBoxLayout, QFrame, QGroupBox, QSlider, QSpinBox, QTextEdit, QDockWidget, QGridLayout
 from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QPixmap
 from MainGUI.ImageInforShow import imageInfor
 from MainGUI.ImageShow import imageShowManager
-from FileAction.readImageByCV import readImage
 
 def helpInforShow(var):
 
@@ -38,7 +36,7 @@ def sliceManager(var):
     var.contrastSlide = QSlider(Qt.Horizontal, var)
     var.luminanceSlide = QSlider(Qt.Horizontal, var)
 
-    var.sliceSpin = QSpinBox(var)
+    var.contrastSpin = QSpinBox(var)
     var.luminanceSpin = QSpinBox(var)
 
     var.contrastSlide.setFocusPolicy(Qt.NoFocus)
@@ -107,7 +105,7 @@ def imageInforShow(var):
 def imageShow(var):
 
     imageLayout = QGridLayout()
-    var.imageShow = imageShowManager()
+    var.imageShow = imageShowManager(var)
 
     imageLayout.addWidget(var.imageShow.transverseImageShow(), 0, 0)
     imageLayout.addWidget(var.imageShow.coronalImageShow(), 0, 1)

@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QLabel, QGridLayout, QSlider, QDoubleSpinBox, QWidget, QGroupBox, QVBoxLayout, QHBoxLayout
+from PyQt5.QtWidgets import QLabel, QGridLayout, QSlider, QDoubleSpinBox, QGroupBox, QVBoxLayout, QHBoxLayout
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPalette
 
@@ -73,7 +73,6 @@ def imageInfor(var):
     var.zspan.setEnabled(False)
     var.zspan.valueChanged.connect(var.zslid.setValue)
 
-    var.rspan.setRange(0, 255)
     var.rspan.setSingleStep(0.01)
     var.rspan.setWrapping(False)
     var.rspan.setValue(0)
@@ -85,19 +84,18 @@ def imageInfor(var):
     var.rspan.setAutoFillBackground(True)
     var.rspan.setPalette(rPa)
 
-    var.gspan.setRange(0, 255)
     var.gspan.setSingleStep(0.01)
     var.gspan.setWrapping(False)
     var.gspan.setValue(0)
     var.gspan.setDecimals(2)
     var.gspan.setEnabled(False)
     # self.gspan.valueChanged.connect(self.gslid.setValue)
+
     gPa = QPalette()
     gPa.setColor(QPalette.Window, Qt.green)
     var.gspan.setAutoFillBackground(True)
     var.gspan.setPalette(gPa)
 
-    var.bspan.setRange(0, 255)
     var.bspan.setSingleStep(0.01)
     var.bspan.setWrapping(False)
     var.bspan.setValue(0)
@@ -139,22 +137,3 @@ def imageInfor(var):
     inforBox.setLayout(inforLayout)
 
     return inforBox
-
-def setWidgetStatus(var):
-
-    var.xslid.setEnabled(True)
-    var.yslid.setEnabled(True)
-    # var.zslid.setEnabled(True)
-    var.xspan.setEnabled(True)
-    var.yspan.setEnabled(True)
-    # var.zspan.setEnabled(True)
-    var.rspan.setEnabled(True)
-    var.gspan.setEnabled(True)
-    var.bspan.setEnabled(True)
-
-    var.xslid.setMaximum(var.width)
-    var.yslid.setMaximum(var.height)
-    # var.zslid.setMaximum(512)
-    var.xspan.setRange(0, var.width)
-    var.yspan.setRange(0, var.height)
-    # var.zspan.setRange(0, 512)

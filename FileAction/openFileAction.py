@@ -1,10 +1,10 @@
 from PyQt5.QtWidgets import QFileDialog, QMessageBox
 import os, filetype
 import logging
+from PyQt5.QtGui import QPixmap
 from MainGUI.InformationShowManager import *
 from MainGUI.FileManager import addFileDirectory
 from FileAction.readImageByCV import readImage
-from MainGUI.ImageInforShow import setWidgetStatus
 
 #判断文件类型
 def fileType(filename):
@@ -39,7 +39,8 @@ def openFile(var):
             addFileDirectory(var, var.im_path)                      #文件显示列表
             var.statusBar().showMessage("已打开图像 '%s'" % var.im_path) #状态栏显示信息
             setLuminanceStatus(var)                                    #调节亮度
-            setWidgetStatus(var)                                        #图像像素信息
+
+            var.imageInforDock.raise_()                             #将像素信息Dock显示出来
         else:
             # QMessageBox.information(None, "提示", "无法读取该文件类型，只能读取（*.png, *.jpg, *.bmp）类型", QMessageBox.Yes)
             box_type = QMessageBox(QMessageBox.Information, "提示", "无法读取该文件类型，只能读取（*.png, *.jpg, *.bmp）类型")  # 将Yes换成"确定"

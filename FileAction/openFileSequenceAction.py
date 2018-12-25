@@ -1,10 +1,10 @@
 import os, filetype
 from PyQt5.QtWidgets import QFileDialog
 import logging
+from PyQt5.QtGui import QPixmap
 from MainGUI.FileManager import addFileDirectory
 from MainGUI.InformationShowManager import *
 from FileAction.readImageByCV import readImage
-from MainGUI.ImageInforShow import setWidgetStatus
 
 
 #判断文件类型
@@ -41,7 +41,6 @@ def openFileSequence(var):
                 flag = True
         if flag:
             var.statusBar().showMessage("已打开文件夹 '%s'" % var.im_dir)  # 状态栏显示信息
-            setWidgetStatus(var)  # 图像像素信息
 
     except Exception as e:
         logging.exception(e)
