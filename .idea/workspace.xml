@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d6a5c8a-84e9-485a-b4cc-db34f4c17142" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileAction/mouseAction.py" beforeDir="false" afterPath="$PROJECT_DIR$/FileAction/mouseAction.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FileAction/openFileAction.py" beforeDir="false" afterPath="$PROJECT_DIR$/FileAction/openFileAction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileAction/openFileSequenceAction.py" beforeDir="false" afterPath="$PROJECT_DIR$/FileAction/openFileSequenceAction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainGUI/ImageInforShow.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainGUI/ImageInforShow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileAction/saveAsFileAction.py" beforeDir="false" afterPath="$PROJECT_DIR$/FileAction/saveAsFileAction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FileAction/saveFileAction.py" beforeDir="false" afterPath="$PROJECT_DIR$/FileAction/saveFileAction.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MainGUI/ImageShow.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainGUI/ImageShow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainGUI/InformationShowManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainGUI/InformationShowManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainGUI/MainPageManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainGUI/MainPageManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainGUI/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainGUI/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainGUI/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainGUI/test1.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,49 +18,49 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/MedicalImageProcessingTool$InformationShowManager.coverage" NAME="InformationShowManager Coverage Results" MODIFIED="1544878696147" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MainGUI" />
-    <SUITE FILE_PATH="coverage/MedicalImageProcessingTool$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1545709552343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MainGUI" />
+    <SUITE FILE_PATH="coverage/MedicalImageProcessingTool$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1545985004139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MainGUI" />
     <SUITE FILE_PATH="coverage/MedicalImageProcessingTool$helpShow.coverage" NAME="helpShow Coverage Results" MODIFIED="1544001001918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MedicalImageProcessingTool$MainPage.coverage" NAME="MainPage Coverage Results" MODIFIED="1543672923890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MedicalImageProcessingTool$test.coverage" NAME="test Coverage Results" MODIFIED="1545295845333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MainGUI" />
+    <SUITE FILE_PATH="coverage/MedicalImageProcessingTool$test.coverage" NAME="test Coverage Results" MODIFIED="1545723654819" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/MainGUI" />
     <SUITE FILE_PATH="coverage/MedicalImageProcessingTool$Mainlayout.coverage" NAME="Mainlayout Coverage Results" MODIFIED="1543997344354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/MedicalImageProcessingTool$GUI.coverage" NAME="GUI Coverage Results" MODIFIED="1545703121212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MedicalImageProcessingTool$GUI.coverage" NAME="GUI Coverage Results" MODIFIED="1546420304739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="418093877">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="26" />
+          <entry key="project.closed" value="30" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.4" value="8" />
-          <entry key="project.open.time.5" value="14" />
-          <entry key="project.open.time.6" value="2" />
-          <entry key="project.opened" value="27" />
+          <entry key="project.open.time.5" value="17" />
+          <entry key="project.open.time.6" value="3" />
+          <entry key="project.opened" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="png" value="3" />
-          <entry key="py" value="127" />
+          <entry key="py" value="182" />
           <entry key="tif" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="4" />
-          <entry key="Python" value="127" />
+          <entry key="Python" value="182" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="59" />
-          <entry key="py" value="16680" />
+          <entry key="py" value="18045" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="59" />
-          <entry key="Python" value="16680" />
+          <entry key="Python" value="18045" />
         </counts>
       </usages-collector>
     </session>
@@ -73,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MainGUI/GUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="162">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <marker date="1545295047576" expanded="true" signature="266:267" ph="..." />
                 <marker date="1545295047576" expanded="true" signature="266:272" ph="..." />
@@ -98,36 +98,74 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FileAction/mouseAction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+            <state relative-caret-position="73">
+              <caret line="83" column="35" lean-forward="true" selection-start-line="83" selection-start-column="35" selection-end-line="83" selection-end-column="35" />
               <folding>
-                <element signature="e#0#27#0" expanded="true" />
-                <marker date="1545633856281" expanded="true" signature="307:1303" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MainGUI/test1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="40" column="55" lean-forward="true" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="55" />
-              <folding>
-                <element signature="e#0#73#0" expanded="true" />
+                <element signature="e#0#42#0" expanded="true" />
+                <marker date="1546420304733" expanded="true" signature="642:1903" ph="..." />
+                <marker date="1546420304733" expanded="true" signature="1633:1638" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/python_stubs/-1199943126/PyQt5/QtWidgets/QWidget.py">
+        <entry file="file://$PROJECT_DIR$/FileAction/readImageByCV.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="239" column="12" lean-forward="true" selection-start-line="239" selection-start-column="12" selection-end-line="239" selection-end-column="12" />
+            <state relative-caret-position="90">
+              <caret line="6" column="11" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MainGUI/ImageShow.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="410">
+              <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+                <marker date="1546419749118" expanded="true" signature="214:292" ph="..." />
+                <marker date="1546419749118" expanded="true" signature="286:287" ph="..." />
+                <marker date="1546419749118" expanded="true" signature="286:292" ph="..." />
+                <marker date="1546419749118" expanded="true" signature="399:400" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FileAction/openFileAction.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#52#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MainGUI/test1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MainGUI/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4752">
+              <caret line="268" column="25" selection-start-line="268" selection-start-column="25" selection-end-line="268" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -190,22 +228,22 @@
         <option value="$PROJECT_DIR$/MainGUI/TransverseImageShow.py" />
         <option value="$PROJECT_DIR$/FileAction/unDo.py" />
         <option value="$PROJECT_DIR$/MainGUI/ToolBar.py" />
-        <option value="$PROJECT_DIR$/FileAction/saveAsFileAction.py" />
-        <option value="$PROJECT_DIR$/FileAction/saveFileAction.py" />
         <option value="$PROJECT_DIR$/MainGUI/MenuBar.py" />
         <option value="$PROJECT_DIR$/MainGUI/FileManager.py" />
         <option value="$PROJECT_DIR$/MainGUI/imageModel.py" />
-        <option value="$PROJECT_DIR$/MainGUI/ImageShow.py" />
-        <option value="$PROJECT_DIR$/FileAction/readImageByCV.py" />
         <option value="$PROJECT_DIR$/MainGUI/MainPageManager.py" />
-        <option value="$PROJECT_DIR$/MainGUI/InformationShowManager.py" />
         <option value="$PROJECT_DIR$/MainGUI/ImageInforShow.py" />
         <option value="$PROJECT_DIR$/FileAction/openFileSequenceAction.py" />
-        <option value="$PROJECT_DIR$/FileAction/openFileAction.py" />
         <option value="$PROJECT_DIR$/MainGUI/GUI.py" />
         <option value="$PROJECT_DIR$/MainGUI/test.py" />
-        <option value="$PROJECT_DIR$/FileAction/mouseAction.py" />
+        <option value="$PROJECT_DIR$/FileAction/saveFileAction.py" />
+        <option value="$PROJECT_DIR$/FileAction/saveAsFileAction.py" />
+        <option value="$PROJECT_DIR$/FileAction/openFileAction.py" />
         <option value="$PROJECT_DIR$/MainGUI/test1.py" />
+        <option value="$PROJECT_DIR$/MainGUI/InformationShowManager.py" />
+        <option value="$PROJECT_DIR$/FileAction/readImageByCV.py" />
+        <option value="$PROJECT_DIR$/MainGUI/ImageShow.py" />
+        <option value="$PROJECT_DIR$/FileAction/mouseAction.py" />
       </list>
     </option>
   </component>
@@ -216,7 +254,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="398" />
+    <option name="x" value="793" />
     <option name="y" value="22" />
     <option name="width" value="1668" />
     <option name="height" value="957" />
@@ -283,7 +321,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test1">
+  <component name="RunManager" selected="Python.GUI">
     <configuration name="GUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MedicalImageProcessingTool" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -403,8 +441,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test1" />
         <item itemvalue="Python.GUI" />
+        <item itemvalue="Python.test1" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.InformationShowManager" />
         <item itemvalue="Python.helpShow" />
@@ -425,16 +463,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="398" y="22" width="1668" height="957" extended-state="0" />
+    <frame x="793" y="22" width="1668" height="957" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.18142681" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.18880689" />
       <window_info id="Structure" order="1" sideWeight="0.50141644" side_tool="true" weight="0.17404674" />
       <window_info id="Favorites" order="2" sideWeight="0.5013298" side_tool="true" weight="0.16605166" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="0" weight="0.32947975" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.499385" visible="true" weight="0.1849711" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.499385" visible="true" weight="0.30404624" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.21040462" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -492,13 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FileAction/unDo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MainGUI/ToolBar.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -516,73 +547,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/MainGUI/555.png" />
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/python_stubs/-1199943126/PyQt5/QtWidgets/QWidget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="971" column="36" lean-forward="true" selection-start-line="971" selection-start-column="36" selection-end-line="971" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FileAction/unDo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FileAction/saveAsFileAction.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FileAction/saveFileAction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="117" selection-start-line="15" selection-start-column="117" selection-end-line="15" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MainGUI/FileManager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FileAction/readImageByCV.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MainGUI/ImageShow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FileAction/openFileSequenceAction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="42" column="78" selection-start-line="42" selection-start-column="78" selection-end-line="42" selection-end-column="78" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <marker date="1545293841308" expanded="true" signature="683:684" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MainGUI/ImageInforShow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="72" selection-start-column="72" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FileAction/openFileAction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="44" column="23" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MainGUI/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="264" column="50" selection-start-line="264" selection-start-column="50" selection-end-line="264" selection-end-column="50" />
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -596,20 +579,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MainGUI/InformationShowManager.py">
+    <entry file="file://$PROJECT_DIR$/FileAction/saveFileAction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1776">
-          <caret line="99" column="35" selection-start-line="99" selection-start-column="35" selection-end-line="99" selection-end-column="35" />
+        <state relative-caret-position="162">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MainGUI/FileManager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
           <folding>
-            <element signature="e#0#135#0" expanded="true" />
-            <marker date="1545292520030" expanded="true" signature="256:257" ph="..." />
-            <marker date="1545292520030" expanded="true" signature="256:258" ph="..." />
-            <marker date="1545292520030" expanded="true" signature="2828:2829" ph="..." />
+            <element signature="e#0#65#0" expanded="true" />
+            <marker date="1545036139055" expanded="true" signature="226:227" ph="..." />
+            <marker date="1545036139055" expanded="true" signature="226:238" ph="..." />
+            <marker date="1545036139055" expanded="true" signature="764:1411" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MainGUI/555.png" />
+    <entry file="file://$PROJECT_DIR$/MainGUI/ImageInforShow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MainGUI/InformationShowManager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="119" column="28" selection-start-line="119" selection-start-column="28" selection-end-line="119" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#135#0" expanded="true" />
+            <marker date="1546074914994" expanded="true" signature="256:257" ph="..." />
+            <marker date="1546074914994" expanded="true" signature="256:258" ph="..." />
+            <marker date="1546074914994" expanded="true" signature="2828:2829" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/MainGUI/MenuBar.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1260">
@@ -621,21 +630,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FileAction/mouseAction.py">
+    <entry file="file://$PROJECT_DIR$/MainGUI/test1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+        <state relative-caret-position="252">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MainGUI/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4752">
+          <caret line="268" column="25" selection-start-line="268" selection-start-column="25" selection-end-line="268" selection-end-column="25" />
           <folding>
-            <element signature="e#0#27#0" expanded="true" />
-            <marker date="1545633856281" expanded="true" signature="307:1303" ph="..." />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MainGUI/GUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="162">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
             <marker date="1545295047576" expanded="true" signature="266:267" ph="..." />
             <marker date="1545295047576" expanded="true" signature="266:272" ph="..." />
@@ -645,19 +660,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/python_stubs/-1199943126/PyQt5/QtWidgets/QWidget.py">
+    <entry file="file://$PROJECT_DIR$/MainGUI/ImageShow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="239" column="12" lean-forward="true" selection-start-line="239" selection-start-column="12" selection-end-line="239" selection-end-column="12" />
+        <state relative-caret-position="410">
+          <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+            <marker date="1546419749118" expanded="true" signature="214:292" ph="..." />
+            <marker date="1546419749118" expanded="true" signature="286:287" ph="..." />
+            <marker date="1546419749118" expanded="true" signature="286:292" ph="..." />
+            <marker date="1546419749118" expanded="true" signature="399:400" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MainGUI/test1.py">
+    <entry file="file://$PROJECT_DIR$/FileAction/openFileAction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="40" column="55" lean-forward="true" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="55" />
+        <state relative-caret-position="300">
+          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
           <folding>
-            <element signature="e#0#73#0" expanded="true" />
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FileAction/readImageByCV.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FileAction/openFileSequenceAction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="42" column="78" selection-start-line="42" selection-start-column="78" selection-end-line="42" selection-end-column="78" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <marker date="1545293841308" expanded="true" signature="683:684" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FileAction/featureExtractAction.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FileAction/mouseAction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="83" column="35" lean-forward="true" selection-start-line="83" selection-start-column="35" selection-end-line="83" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+            <marker date="1546420304733" expanded="true" signature="642:1903" ph="..." />
+            <marker date="1546420304733" expanded="true" signature="1633:1638" ph="..." />
           </folding>
         </state>
       </provider>

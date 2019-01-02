@@ -18,10 +18,12 @@ class imageShowManager(QWidget):
         imagePa.setColor(QPalette.Window, Qt.black)
         self.var.trImageShow.setAutoFillBackground(True)
         self.var.trImageShow.setPalette(imagePa)
+        self.var.trImageShow.setScaledContents(True)
 
         return self.var.trImageShow
 
     def setTransverseImagePixmap(self, imagePixmap):
+        print('setTransverseImagePixmap')
         return self.var.trImageShow.setPixmap(imagePixmap)
 
     def coronalImageShow(self):
