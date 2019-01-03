@@ -50,7 +50,7 @@ class myLabel(QLabel):
 
 class Example(QWidget):
     def __init__(self):
-        super().__init__()
+        super.__init__()
         self.initUI()
 
     def initUI(self):

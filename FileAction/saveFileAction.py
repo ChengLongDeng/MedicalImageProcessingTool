@@ -3,9 +3,13 @@ from PyQt5.QtWidgets import QMessageBox
 def saveFile(var):
 
     # 判断是否打开文件
+
     flag = True
     try:
         var.im_path
+        print("---------------")
+        print(var.im_path)
+        print("---------------")
     except Exception as e:
         flag = False
 
