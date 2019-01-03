@@ -20,4 +20,4 @@ def saveFile(var):
         # filename, _ = QFileDialog.getSaveFileName(None, "选择保存的文件路径", var.im_path, "Image Files(*.png *.jpg *.bmp)")
         var.QImg.save(var.im_path)
 
-        var.statusBar().showMessage("Saved '%s'" % var.im_path, 2000)
+        var.statusBar().showMessage("保存 '%s'" % var.im_path, 2000)

@@ -17,4 +17,4 @@ def saveAsFile(var):
 
         var.QImg.save(filename)
 
-        var.statusBar().showMessage("Saved '%s'" % filename, 2000)
+        var.statusBar().showMessage("另存为 '%s'" % filename, 2000)

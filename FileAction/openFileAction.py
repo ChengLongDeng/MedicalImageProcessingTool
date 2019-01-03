@@ -33,8 +33,8 @@ def openFile(var):
 
         if fileType(var.im_path):       #判断打开的图像是否是.png, .jpg, .bmp
 
-            imagePixmap = QPixmap.fromImage(readImage(var, var.im_path))
-            openImageLayout(var, imagePixmap)                       #打开图像
+            var.imagePixmap = QPixmap.fromImage(readImage(var, var.im_path))
+            openImageLayout(var, var.imagePixmap)                       #打开图像
 
             addFileDirectory(var, var.im_path)                      #文件显示列表
             var.statusBar().showMessage("已打开图像 '%s'" % var.im_path) #状态栏显示信息
