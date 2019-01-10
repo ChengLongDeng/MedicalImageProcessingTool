@@ -1,4 +1,5 @@
 from PyQt5.QtWidgets import QMessageBox, QFileDialog
+import cv2
 
 def saveAsFile(var):
 
@@ -15,6 +16,6 @@ def saveAsFile(var):
     else:
         filename, _ = QFileDialog.getSaveFileName(None, "选择保存的文件路径", var.im_path, "Image Files(*.png *.jpg *.bmp)")
 
-        var.QImg.save(filename)
+        cv2.imwrite(filename, var.img)
 
         var.statusBar().showMessage("另存为 '%s'" % filename, 2000)

@@ -23,7 +23,6 @@ class imageShowManager(QWidget):
         return self.var.trImageShow
 
     def setTransverseImagePixmap(self, imagePixmap):
-        print('setTransverseImagePixmap')
         return self.var.trImageShow.setPixmap(imagePixmap)
 
     def coronalImageShow(self):
@@ -35,6 +34,7 @@ class imageShowManager(QWidget):
         self.imagePa.setColor(QPalette.Window, Qt.black)
         self.var.coImageShow.setAutoFillBackground(True)
         self.var.coImageShow.setPalette(self.imagePa)
+        self.var.coImageShow.setScaledContents(True)
 
         return self.var.coImageShow
 
@@ -50,6 +50,7 @@ class imageShowManager(QWidget):
         self.imagePa.setColor(QPalette.Window, Qt.black)
         self.var.saImageShow.setAutoFillBackground(True)
         self.var.saImageShow.setPalette(self.imagePa)
+        self.var.saImageShow.setScaledContents(True)
 
         return self.var.saImageShow
 
@@ -65,6 +66,7 @@ class imageShowManager(QWidget):
         self.imagePa.setColor(QPalette.Window, Qt.black)
         self.var.tdImageShow.setAutoFillBackground(True)
         self.var.tdImageShow.setPalette(self.imagePa)
+        self.var.tdImageShow.setScaledContents(True)
 
         return self.var.tdImageShow
 

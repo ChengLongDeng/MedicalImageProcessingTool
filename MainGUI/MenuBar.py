@@ -4,6 +4,7 @@ from FileAction.openFileAction import *
 from FileAction.saveFileAction import *
 from FileAction.saveAsFileAction import *
 from FileAction.openFileSequenceAction import *
+from FileAction.lassoAction import *
 
 #菜单栏实现
 def menubarAchieve(var):
@@ -98,12 +99,12 @@ def menubarAchieve(var):
 
     rectangleLassoAction = QAction(QIcon('./Icon/rectangle.png'), '&矩形套索工具', var)
     rectangleLassoAction.setStatusTip('矩形套索工具')
-    rectangleLassoAction.triggered.connect(qApp.quit)
+    rectangleLassoAction.triggered.connect(lambda: RectLasso(var))
     lassoAction.addAction(rectangleLassoAction)
 
     ellipseLassoAction = QAction(QIcon('./Icon/ellipse.png'), '&椭圆形套索工具', var)
     ellipseLassoAction.setStatusTip('椭圆形套索工具')
-    ellipseLassoAction.triggered.connect(qApp.quit)
+    ellipseLassoAction.triggered.connect(lambda: elliLasso(var))
     lassoAction.addAction(ellipseLassoAction)
 
     customLassoAction = QAction(QIcon('save.png'), '&磁性套索工具', var)
