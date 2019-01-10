@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d6a5c8a-84e9-485a-b4cc-db34f4c17142" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileAction/mouseAction.py" beforeDir="false" afterPath="$PROJECT_DIR$/FileAction/mouseAction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileAction/saveAsFileAction.py" beforeDir="false" afterPath="$PROJECT_DIR$/FileAction/saveAsFileAction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FileAction/saveFileAction.py" beforeDir="false" afterPath="$PROJECT_DIR$/FileAction/saveFileAction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainGUI/ImageShow.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainGUI/ImageShow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainGUI/MenuBar.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainGUI/MenuBar.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainGUI/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/MainGUI/test1.py" afterDir="false" />
-    </list>
+    <list default="true" id="7d6a5c8a-84e9-485a-b4cc-db34f4c17142" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +21,7 @@
     <session id="418093877">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="37" />
+          <entry key="project.closed" value="38" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.4" value="10" />
@@ -128,8 +120,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MainGUI/test1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="102">
+              <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
               <folding>
                 <element signature="e#0#70#0" expanded="true" />
                 <marker date="1547090710194" expanded="true" signature="1070:1102" ph="..." />
@@ -446,7 +438,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="380" y="22" width="1668" height="957" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49858356" visible="true" weight="0.16728167" />
       <window_info id="Structure" order="1" sideWeight="0.50141644" side_tool="true" weight="0.17404674" />
@@ -454,7 +445,7 @@
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="0" weight="0.32947975" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.499385" visible="true" weight="0.16878612" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.499385" weight="0.16878612" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.21040462" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -683,8 +674,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MainGUI/test1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="102">
+          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
           <folding>
             <element signature="e#0#70#0" expanded="true" />
             <marker date="1547090710194" expanded="true" signature="1070:1102" ph="..." />
