@@ -5,6 +5,7 @@ from FileAction.saveFileAction import *
 from FileAction.saveAsFileAction import *
 from FileAction.openFileSequenceAction import *
 from FileAction.lassoAction import *
+# from FileAction.featureExtractAction import *
 
 #菜单栏实现
 def menubarAchieve(var):
@@ -83,6 +84,11 @@ def menubarAchieve(var):
     viewMenu.addAction(imageInforAction)
 
     #图像操作菜单
+    featureAction = QAction('&特征提取', var)
+    featureAction.setStatusTip('提取图像特征')
+    # featureAction.triggered.connect(lambda: featureExtract(var))
+    featureAction.triggered.connect(qApp.quit)
+
     denoiseAction = QAction('&图像去噪', var)
     denoiseAction.setStatusTip('图像去噪操作')
     denoiseAction.triggered.connect(qApp.quit)
@@ -126,6 +132,7 @@ def menubarAchieve(var):
 
 
     processMenu = menubar.addMenu('&处理')
+    processMenu.addAction(featureAction)
     processMenu.addAction(denoiseAction)
     processMenu.addAction(smoothAction)
     processMenu.addAction(contrastAction)
