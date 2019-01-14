@@ -113,6 +113,11 @@ def menubarAchieve(var):
     ellipseLassoAction.triggered.connect(lambda: elliLasso(var))
     lassoAction.addAction(ellipseLassoAction)
 
+    polyLassoAction = QAction(QIcon('save.png'), '&多边形套索工具', var)
+    polyLassoAction.setStatusTip('多边形套索工具')
+    polyLassoAction.triggered.connect(lambda: polyLasso(var))
+    lassoAction.addAction(polyLassoAction)
+
     customLassoAction = QAction(QIcon('save.png'), '&磁性套索工具', var)
     customLassoAction.setStatusTip('磁性套索工具')
     customLassoAction.triggered.connect(qApp.quit)

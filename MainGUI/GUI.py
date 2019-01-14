@@ -23,7 +23,6 @@ class GUI(QMainWindow):
         self.center()
         # self.setStyleSheet('''background-color:white;''')
         self.setWindowFlags(Qt.WindowMinimizeButtonHint)
-
         self.show()
 
     def center(self):

@@ -1,9 +1,9 @@
-from PyQt5.QtCore import Qt, QRect, QPoint
+from PyQt5.QtCore import Qt, QRect
 from PyQt5.QtWidgets import QLabel
-from PyQt5.QtGui import QPainter, QPen, QPixmap
-import cv2
+from PyQt5.QtGui import QPainter, QPen, QPixmap, QPolygon, QPainterPath
+import cv2, numpy
 from FileAction.readImageByCV import readImage
-from MainGUI.InformationShowManager import *
+import MainGUI.InformationShowManager as ISM
 
 
 class labelModel(QLabel):
@@ -16,11 +16,16 @@ class labelModel(QLabel):
         self.setFocusPolicy(Qt.ClickFocus)                  #通过单击获取焦点
 
         self.var.x0 = self.var.x1 = self.var.y0 = self.var.y1 = 0
-        self.flag = False
-        self.rect = QRect()
 
-        self.var.rectFlag = False
-        self.var.elliFlag = False
+        self.rect = QRect()             #矩形模板
+        self.var.chosen_points = QPolygon() #多边形模板
+        self.path = QPainterPath()      #路径模板
+
+        self.flag = False               #判断鼠标是否按下
+        self.polyFlag = False           #选择多边形套索时，判断鼠标属否按下
+        self.var.rectFlag = False       #判断是否选择矩形套索
+        self.var.elliFlag = False       #判断是否选择椭圆形套索
+        self.var.polyFlag = False       #判断是否选择多边形套索
 
     def valueChanged(self, event):
 
@@ -43,30 +48,58 @@ class labelModel(QLabel):
         self.var.gspan.setValue(self.var.img[event.pos().x()][event.pos().y()][1])
         self.var.bspan.setValue(self.var.img[event.pos().x()][event.pos().y()][0])
 
-        # print(self.var.img[event.pos().x()][event.pos().y()])
-
+    #画矩形
     def cusDrawRect(self, painter):
-
         self.rect.setRect(self.var.x0, self.var.y0, self.var.x1 - self.var.x0, self.var.y1 - self.var.y0)
-        painter.setPen(QPen(Qt.red, 2, Qt.SolidLine))
+        painter.setPen(QPen(Qt.red, 1, Qt.SolidLine))
         painter.drawRect(self.rect)
 
+    #画圆形
     def cusDrawElli(self, painter):
-        painter.setRenderHint(QPainter.Antialiasing, True)
-        painter.setPen(QPen(Qt.red, 2, Qt.SolidLine))
+        self.rect.setRect(self.var.x0, self.var.y0, self.var.x1 - self.var.x0, self.var.y1 - self.var.y0)
+        painter.setPen(QPen(Qt.red, 1, Qt.SolidLine))
+        painter.drawEllipse(self.rect)
 
-        c_x = int(self.var.x0 + (self.var.x1 - self.var.x0) / 2)
-        c_y = int(self.var.y0 + (self.var.y1 - self.var.y0) / 2)
+    #画点
+    def cusDrawPoint(self, qp):
+        qp.setPen(QPen(Qt.red, 5))
+        for pos in self.var.chosen_points:
+            qp.drawPoint(pos)
 
-        center = QPoint(c_x, c_y)
+    #画多边形
+    def cusDrawPolyline(self, qp):
+        qp.setPen(QPen(Qt.red, 1))
+        qp.drawPolyline(self.var.chosen_points)
 
-        rx = int((self.var.x1 - self.var.x0) / 2)
-        ry = int((self.var.y1 - self.var.y0) / 2)
+    def isDraw(self):
+        if self.var.rectFlag is True or self.var.elliFlag is True or self.var.polyFlag is True:
 
-        painter.drawEllipse(center, rx, ry)
+            self.setCursor(Qt.CrossCursor)  # 鼠标指针显示为十字交叉
+            painter = QPainter()
+            painter.begin(self)
+
+            if self.var.rectFlag is True:
+                self.cusDrawRect(painter)  # 矩形套索
+            if self.var.elliFlag is True:
+                self.cusDrawElli(painter)
+            if self.var.polyFlag is True:
+                if self.polyFlag:
+                    self.cusDrawPoint(painter)
+                    self.cusDrawPolyline(painter)
+
+            painter.end()
+
+    def statusChanged(self, event):
+        self.flag = True
+        self.polyFlag = True
+        self.var.x0 = event.pos().x()
+        self.var.y0 = event.pos().y()
+        self.var.x1 = self.var.x0
+        self.var.y1 = self.var.y0
+        self.var.chosen_points.append(event.pos())
+        self.update()
 
     def mouseMoveEvent(self, event):            #鼠标移动事件
-        print('move')
         if self.var.trImageShow.pixmap():       #判断是否加载图片
             self.valueChanged(event)
 
@@ -82,16 +115,22 @@ class labelModel(QLabel):
         if self.flag:                           #记录坐标信息
             self.var.x1 = event.pos().x()
             self.var.y1 = event.pos().y()
+            self.path.lineTo(self.var.x1, self.var.y1)  #多边形路径
             self.update()
 
     def mousePressEvent(self, event):       #鼠标按下事件
+
         if self.var.trImageShow.pixmap():   # 判断是否加载图片
-            self.flag = True
-            self.var.x0 = event.pos().x()
-            self.var.y0 = event.pos().y()
-            self.var.x1 = self.var.x0
-            self.var.y1 = self.var.y0
-            self.update()
+            self.statusChanged(event)
+
+        if self.var.coImageShow.pixmap():       #判断是否加载图片
+            self.statusChanged(event)
+
+        if self.var.saImageShow.pixmap():       #判断是否加载图片
+            self.statusChanged(event)
+
+        if self.var.tdImageShow.pixmap():       #判断是否加载图片
+            self.statusChanged(event)
 
     def mouseReleaseEvent(self, event): #鼠标释放事件
         self.flag = False
@@ -106,12 +145,11 @@ class labelModel(QLabel):
                 h0 = int((float(self.var.height) / 400) * self.var.y0)
                 w1 = int((float(self.var.width) / 450) * self.var.x1)
                 h1 = int((float(self.var.height) / 400) * self.var.y1)
-                cv2.rectangle(self.var.img, (w0, h0), (w1, h1), (0, 255, 0), 1) #在图像上画矩形
+                cv2.rectangle(self.var.img, (w0, h0), (w1, h1), (0, 255, 0), 1)     # 在图像上画矩形
                 cv2.imwrite(self.var.im_path, self.var.img)
 
                 self.var.imagePixmap = QPixmap.fromImage(readImage(self.var, self.var.im_path))
-                # openImageLayout(self.var, self.var.imagePixmap)  # 打开图像
-                self.var.imageShow.setTransverseImagePixmap(self.var.imagePixmap)
+                ISM.openImageLayout(self.var, self.var.imagePixmap)                 # 显示结果
 
         if self.var.elliFlag is True:
 
@@ -128,43 +166,41 @@ class labelModel(QLabel):
                 cv2.imwrite(self.var.im_path, self.var.img)
 
                 self.var.imagePixmap = QPixmap.fromImage(readImage(self.var, self.var.im_path))
-                # openImageLayout(self.var, self.var.imagePixmap)  # 打开图像
-                self.var.imageShow.setTransverseImagePixmap(self.var.imagePixmap)
+                ISM.openImageLayout(self.var, self.var.imagePixmap)  # 显示结果
+
+        if self.var.polyFlag is True:
+
+            if event.key() == Qt.Key_Enter or event.key() == Qt.Key_Return:  # 小键盘和大键盘的回车键
+
+                temp = []
+
+                for pos in self.var.chosen_points:
+                    x = int((float(self.var.width) / 450) * pos.x())
+                    y = int((float(self.var.height) / 400) * pos.y())
+                    temp.append([x, y])
+
+                points = numpy.array(temp, numpy.int32)
+                points = points.reshape(-1, 1, 2)
+
+                cv2.polylines(self.var.img, [points], True, (0, 255, 0))
+                cv2.imwrite(self.var.im_path, self.var.img)
+
+                self.var.imagePixmap = QPixmap.fromImage(readImage(self.var, self.var.im_path))
+                ISM.openImageLayout(self.var, self.var.imagePixmap)  # 显示结果
+
+                self.var.chosen_points.clear()
 
     def paintEvent(self, event):        #套索工具
         super().paintEvent(event)
-        print('paint')
 
-        if self.var.rectFlag is True or self.var.elliFlag is True:
+        if self.var.trImageShow.pixmap():
+            self.isDraw()
+        if self.var.coImageShow.pixmap():
+            self.isDraw()
 
-            self.setCursor(Qt.CrossCursor)  # 鼠标指针显示为十字交叉
+        if self.var.saImageShow.pixmap():
+            self.isDraw()
 
-            if self.var.trImageShow.pixmap():
-                painter = QPainter()
-                painter.begin(self)
-
-                if self.var.rectFlag is True:
-                    self.cusDrawRect(painter)     #矩形套索
-                if self.var.elliFlag is True:
-                    self.cusDrawElli(painter)
-
-                painter.end()
-
-            if self.var.coImageShow.pixmap():
-                painter = QPainter()
-                painter.begin(self)
-                self.cusDrawRect(painter)     #矩形套索
-                painter.end()
-
-            if self.var.saImageShow.pixmap():
-                painter = QPainter()
-                painter.begin(self)
-                self.cusDrawRect(painter)     #矩形套索
-                painter.end()
-
-            if self.var.tdImageShow.pixmap():
-                painter = QPainter()
-                painter.begin(self)
-                self.cusDrawRect(painter)     #矩形套索
-                painter.end()
+        if self.var.tdImageShow.pixmap():
+            self.isDraw()
 
