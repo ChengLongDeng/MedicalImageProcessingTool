@@ -4,6 +4,7 @@ from PyQt5.QtCore import Qt
 from MainGUI.MainPageManager import mainLayout
 from MainGUI.MenuBar import menubarAchieve
 from MainGUI.ToolBar import toolbarAchieve
+from MainGUI.StatusBar import statusbarAchieve
 
 class GUI(QMainWindow):
 
@@ -16,6 +17,7 @@ class GUI(QMainWindow):
         menubarAchieve(self)                          #菜单栏
         toolbarAchieve(self)                          #工具栏
         mainLayout(self)                              #主页面布局
+        statusbarAchieve(self)                        #状态栏设置
 
         self.statusBar().showMessage('准备')
         self.setWindowTitle('医学图像处理工具')

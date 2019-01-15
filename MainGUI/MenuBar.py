@@ -89,9 +89,27 @@ def menubarAchieve(var):
     # featureAction.triggered.connect(lambda: featureExtract(var))
     featureAction.triggered.connect(qApp.quit)
 
-    denoiseAction = QAction('&图像去噪', var)
-    denoiseAction.setStatusTip('图像去噪操作')
-    denoiseAction.triggered.connect(qApp.quit)
+    denoiseAction = QMenu('&图像去噪', var)
+
+    GaussianFilterAction = QAction(QIcon('save.png'), '&高斯滤波去噪', var)
+    GaussianFilterAction.setStatusTip('高斯滤波去噪')
+    GaussianFilterAction.triggered.connect(lambda: RectLasso(var))
+    denoiseAction.addAction(GaussianFilterAction)
+
+    MedianFilterAction = QAction(QIcon('save.png'), '&中值滤波去噪', var)
+    MedianFilterAction.setStatusTip('中值滤波去噪')
+    MedianFilterAction.triggered.connect(lambda: RectLasso(var))
+    denoiseAction.addAction(MedianFilterAction)
+
+    PMeQuationAction = QAction(QIcon('save.png'), '&P-M方程去噪', var)
+    PMeQuationAction.setStatusTip('P-M方程去噪')
+    PMeQuationAction.triggered.connect(lambda: RectLasso(var))
+    denoiseAction.addAction(PMeQuationAction)
+
+    TVAction = QAction(QIcon('save.png'), '&TV法去噪', var)
+    TVAction.setStatusTip('TV法去噪')
+    TVAction.triggered.connect(lambda: RectLasso(var))
+    denoiseAction.addAction(TVAction)
 
     smoothAction = QAction('&平滑处理', var)
     smoothAction.setStatusTip('平滑处理操作')
@@ -103,12 +121,12 @@ def menubarAchieve(var):
 
     lassoAction = QMenu('&套索工具', var)
 
-    rectangleLassoAction = QAction(QIcon('./Icon/rectangle.png'), '&矩形套索工具', var)
+    rectangleLassoAction = QAction(QIcon('save.png'), '&矩形套索工具', var)
     rectangleLassoAction.setStatusTip('矩形套索工具')
     rectangleLassoAction.triggered.connect(lambda: RectLasso(var))
     lassoAction.addAction(rectangleLassoAction)
 
-    ellipseLassoAction = QAction(QIcon('./Icon/ellipse.png'), '&椭圆形套索工具', var)
+    ellipseLassoAction = QAction(QIcon('save.png'), '&椭圆形套索工具', var)
     ellipseLassoAction.setStatusTip('椭圆形套索工具')
     ellipseLassoAction.triggered.connect(lambda: elliLasso(var))
     lassoAction.addAction(ellipseLassoAction)
@@ -138,7 +156,7 @@ def menubarAchieve(var):
 
     processMenu = menubar.addMenu('&处理')
     processMenu.addAction(featureAction)
-    processMenu.addAction(denoiseAction)
+    processMenu.addMenu(denoiseAction)
     processMenu.addAction(smoothAction)
     processMenu.addAction(contrastAction)
     processMenu.addMenu(lassoAction)

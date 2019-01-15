@@ -29,24 +29,10 @@ class labelModel(QLabel):
 
     def valueChanged(self, event):
 
-        self.var.xslid.setValue(event.pos().x())  # 显示在滑动条上
-        self.var.yslid.setValue(event.pos().y())
+        #在状态栏上显示
+        self.var.location.setText('(x : %d, y : %d, z : %d)' % (event.pos().x(), event.pos().y(), 0))
+        self.var.pixel.setText('(r : %d, g : %d, b : %d)' % (self.var.img[event.pos().x()][event.pos().y()][2], self.var.img[event.pos().x()][event.pos().y()][1], self.var.img[event.pos().x()][event.pos().y()][0]))
 
-        self.var.xslid.setMaximum(self.var.width)
-        self.var.yslid.setMaximum(self.var.height)
-        # var.zslid.setMaximum(512)
-        self.var.xspan.setRange(0, self.var.width)
-        self.var.yspan.setRange(0, self.var.height)
-        # var.zspan.setRange(0, 512)
-
-        # 像素值显示
-        self.var.rspan.setRange(self.var.img.min(), self.var.img.max())
-        self.var.gspan.setRange(self.var.img.min(), self.var.img.max())
-        self.var.bspan.setRange(self.var.img.min(), self.var.img.max())
-
-        self.var.rspan.setValue(self.var.img[event.pos().x()][event.pos().y()][2])
-        self.var.gspan.setValue(self.var.img[event.pos().x()][event.pos().y()][1])
-        self.var.bspan.setValue(self.var.img[event.pos().x()][event.pos().y()][0])
 
     #画矩形
     def cusDrawRect(self, painter):
@@ -189,6 +175,20 @@ class labelModel(QLabel):
                 ISM.openImageLayout(self.var, self.var.imagePixmap)  # 显示结果
 
                 self.var.chosen_points.clear()
+
+    def mouseDoubleClickEvent(self, Event):
+
+        if self.var.trImageShow.pixmap():  # 判断是否加载图片
+            self.setVisible(False)
+
+    def wheelEvent(self, event):
+        pi = event.pixelDelta()
+        coor = event.angleDelta() / 8
+        if coor is not None:
+            print('pixel : %s' % pi)
+            print('x : %s' % coor.x())
+            print('y : %s' % coor.y())
+
 
     def paintEvent(self, event):        #套索工具
         super().paintEvent(event)
