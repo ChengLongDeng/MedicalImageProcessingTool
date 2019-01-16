@@ -8,10 +8,10 @@ class imageShowManager(QWidget):
     def __init__(self, var):
         super(imageShowManager, self).__init__()
         self.var = var
-        self.trFlag = True
-        self.coFlag = True
-        self.saFlag = True
-        self.tdFlag = True
+        self.var.trFlag = True
+        self.var.coFlag = True
+        self.var.saFlag = True
+        self.var.tdFlag = True
 
     def createNewModel(self):
         model = labelModel(self.var)        # 新建自定义QLabel
@@ -36,16 +36,17 @@ class imageShowManager(QWidget):
 
     def trImageEnlarge(self, event=None):           #这里必须加event参数，否则出错
         if self.var.trImageShow.pixmap():  # 判断是否加载图片
-            if self.trFlag:
+            if self.var.trFlag:
                 self.var.coImageShow.setVisible(False)
                 self.var.saImageShow.setVisible(False)
                 self.var.tdImageShow.setVisible(False)
-                self.trFlag = False
+                self.var.trFlag = False
             else:
+                self.var.trImageShow.setFixedSize(450, 400)
                 self.var.coImageShow.setVisible(True)
                 self.var.saImageShow.setVisible(True)
                 self.var.tdImageShow.setVisible(True)
-                self.trFlag = True
+                self.var.trFlag = True
 
     def coronalImageShow(self):
 
@@ -58,16 +59,17 @@ class imageShowManager(QWidget):
 
     def coImageEnlarge(self, event=None):
         if self.var.coImageShow.pixmap():  # 判断是否加载图片
-            if self.coFlag:
+            if self.var.coFlag:
                 self.var.trImageShow.setVisible(False)
                 self.var.saImageShow.setVisible(False)
                 self.var.tdImageShow.setVisible(False)
-                self.coFlag = False
+                self.var.coFlag = False
             else:
+                self.var.coImageShow.setFixedSize(450, 400)
                 self.var.trImageShow.setVisible(True)
                 self.var.saImageShow.setVisible(True)
                 self.var.tdImageShow.setVisible(True)
-                self.coFlag = True
+                self.var.coFlag = True
 
     def sagittalImageShow(self):
 
@@ -80,16 +82,17 @@ class imageShowManager(QWidget):
 
     def saImageEnlarge(self, event=None):
         if self.var.saImageShow.pixmap():  # 判断是否加载图片
-            if self.saFlag:
+            if self.var.saFlag:
                 self.var.coImageShow.setVisible(False)
                 self.var.trImageShow.setVisible(False)
                 self.var.tdImageShow.setVisible(False)
-                self.saFlag = False
+                self.var.saFlag = False
             else:
+                self.var.saImageShow.setFixedSize(450, 400)
                 self.var.coImageShow.setVisible(True)
                 self.var.trImageShow.setVisible(True)
                 self.var.tdImageShow.setVisible(True)
-                self.saFlag = True
+                self.var.saFlag = True
 
     def tDImageShow(self):
 
@@ -102,13 +105,14 @@ class imageShowManager(QWidget):
 
     def tdImageEnlarge(self, event=None):
         if self.var.tdImageShow.pixmap():       #判断是否加载图片
-            if self.tdFlag:
+            if self.var.tdFlag:
                 self.var.coImageShow.setVisible(False)
                 self.var.saImageShow.setVisible(False)
                 self.var.trImageShow.setVisible(False)
-                self.tdFlag = False
+                self.var.tdFlag = False
             else:
+                self.var.tdImageShow.setFixedSize(450, 400)
                 self.var.coImageShow.setVisible(True)
                 self.var.saImageShow.setVisible(True)
                 self.var.trImageShow.setVisible(True)
-                self.tdFlag = True
+                self.var.tdFlag = True
