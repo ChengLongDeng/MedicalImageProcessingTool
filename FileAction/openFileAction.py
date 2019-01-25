@@ -2,11 +2,11 @@ from PyQt5.QtWidgets import QFileDialog, QMessageBox
 import os, filetype
 import logging
 from PyQt5.QtGui import QPixmap
-from MainGUI.InformationShowManager import *
+from MainGUI.Layout.InformationShowManager import *
 from MainGUI.FileManager import addFileDirectory
 from FileAction.readImageByCV import readImage
 
-#判断文件类型
+# 判断文件类型
 def fileType(filename):
 
     kind = filetype.guess(filename)
@@ -18,29 +18,29 @@ def fileType(filename):
         # print('File extension: %s' % kind.extension)
         # print('File MIME type: %s' % kind.mime)
 
-#打开文件
+# 打开文件
 def openFile(var):
 
     try:
         var.im_path, _ = QFileDialog.getOpenFileName(None, '打开文件', '', 'Image Files(*.png *.jpg *.bmp)')
 
-        if not os.path.exists(var.im_path):         #判断路径是否存在
+        if not os.path.exists(var.im_path):         # 判断路径是否存在
             # QMessageBox.information(None, "提示", "该路径不存在", QMessageBox.Yes)  # 使用infomation信息框
             box_dir = QMessageBox(QMessageBox.Information, "提示", "该路径不存在")  # 将Yes换成"确定"
             box_dir.addButton(str('确定'), QMessageBox.YesRole)
             box_dir.exec_()
             return
 
-        if fileType(var.im_path):       #判断打开的图像是否是.png, .jpg, .bmp
+        if fileType(var.im_path):                                       # 判断打开的图像是否是.png, .jpg, .bmp
 
             var.imagePixmap = QPixmap.fromImage(readImage(var, var.im_path))
-            openImageLayout(var, var.imagePixmap)                       #打开图像
+            openImageLayout(var, var.imagePixmap)                       # 打开图像
 
-            addFileDirectory(var, var.im_path)                      #文件显示列表
-            var.statusBar().showMessage("已打开图像 '%s'" % var.im_path) #状态栏显示信息
-            setLuminanceStatus(var)                                    #调节亮度
+            addFileDirectory(var, var.im_path)                          # 文件显示列表
+            var.statusBar().showMessage("已打开图像 '%s'" % var.im_path)  # 状态栏显示信息
+            setLuminanceStatus(var)                                     # 调节亮度
 
-            var.imageInforDock.raise_()                             #将像素信息Dock显示出来
+            var.imageInforDock.raise_()                                 # 将像素信息Dock显示出来
         else:
             # QMessageBox.information(None, "提示", "无法读取该文件类型，只能读取（*.png, *.jpg, *.bmp）类型", QMessageBox.Yes)
             box_type = QMessageBox(QMessageBox.Information, "提示", "无法读取该文件类型，只能读取（*.png, *.jpg, *.bmp）类型")  # 将Yes换成"确定"
@@ -51,10 +51,10 @@ def openFile(var):
     except Exception as e:
         logging.exception(e)
 
-#打开下一个文件
+# 打开下一个文件
 def openNextFile(var):
 
-    #判断是否打开文件
+    # 判断是否打开文件
     flag = True
     try:
         var.im_path
@@ -62,17 +62,17 @@ def openNextFile(var):
         flag = False
 
     if not flag:
-        # QMessageBox.warning(None, "提示", "请先打开图像", QMessageBox.Yes)  # 使用warning信息框
-        box = QMessageBox(QMessageBox.Information, "提示", "请先打开图像")      #将Yes换成"确定"
+        # QMessageBox.warning(None, "提示", "请先打开图像", QMessageBox.Yes)    # 使用warning信息框
+        box = QMessageBox(QMessageBox.Information, "提示", "请先打开图像")      # 将Yes换成"确定"
         box.addButton(str('确定'), QMessageBox.YesRole)
         box.exec_()
         return
 
     else:
         try:
-            if not os.path.exists(var.im_path):         # 判断路径是否存在
-                # QMessageBox.information(None, "提示", "路径不存在", QMessageBox.Yes)  # 使用infomation信息框
-                box_dir = QMessageBox(QMessageBox.Information, "提示", "路径不存在")  # 将Yes换成"确定"
+            if not os.path.exists(var.im_path):                                          # 判断路径是否存在
+                # QMessageBox.information(None, "提示", "路径不存在", QMessageBox.Yes)     # 使用infomation信息框
+                box_dir = QMessageBox(QMessageBox.Information, "提示", "路径不存在")       # 将Yes换成"确定"
                 box_dir.addButton(str('确定'), QMessageBox.YesRole)
                 box_dir.exec_()
                 return
@@ -92,8 +92,8 @@ def openNextFile(var):
                         # imagePixmap = QPixmap(os.path.split(var.im_path)[0] + '/' + imageList[loc])
                         openImageLayout(var, imagePixmap)  # 打开图像
 
-                        addFileDirectory(var, os.path.split(var.im_path)[0] + '/' + imageList[loc])  # 文件显示列表
-                        var.statusBar().showMessage("已打开图像 '%s'" % var.im_path)  # 状态栏显示信息
+                        addFileDirectory(var, os.path.split(var.im_path)[0] + '/' + imageList[loc])     # 文件显示列表
+                        var.statusBar().showMessage("已打开图像 '%s'" % var.im_path)                     # 状态栏显示信息
                         break
                     else:
                         loc = loc + 1
@@ -110,8 +110,8 @@ def openNextFile(var):
                         # imagePixmap = QPixmap(os.path.split(var.im_path)[0] + '/' + imageList[loc])
                         openImageLayout(var, imagePixmap)  # 打开图像
 
-                        addFileDirectory(var, os.path.split(var.im_path)[0] + '/' + imageList[loc])  # 文件显示列表
-                        var.statusBar().showMessage("已打开图像 '%s'" % var.im_path)  # 状态栏显示信息
+                        addFileDirectory(var, os.path.split(var.im_path)[0] + '/' + imageList[loc])     # 文件显示列表
+                        var.statusBar().showMessage("已打开图像 '%s'" % var.im_path)                      # 状态栏显示信息
                         break
                     else:
                         loc = loc + 1
