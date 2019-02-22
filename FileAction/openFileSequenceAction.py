@@ -2,7 +2,7 @@ import os, filetype
 from PyQt5.QtWidgets import QFileDialog
 import logging
 from PyQt5.QtGui import QPixmap
-from MainGUI.FileManager import addFileDirectory
+from MainGUI.Layout.FileManager import addFileDirectory
 from MainGUI.Layout.InformationShowManager import *
 from FileAction.readImageByCV import readImage
 

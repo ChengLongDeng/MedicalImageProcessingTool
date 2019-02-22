@@ -17,7 +17,7 @@ class imageShowManager(QWidget):
     def createNewModel(self):
         model = labelModel(self.var)        # 新建自定义QLabel
         model.setAlignment(Qt.AlignCenter)
-        model.setFixedSize(400, 400)
+        model.setFixedSize(200, 200)
         imagePa = QPalette()
         imagePa.setColor(QPalette.Window, Qt.black)
         model.setAutoFillBackground(True)
@@ -26,7 +26,7 @@ class imageShowManager(QWidget):
 
         return model
 
-    # 创建Label
+    # 显示原图像
     def transverseImageShow(self):
 
         self.var.trImageShow = self.createNewModel()                                      # 新建自定义QLabel

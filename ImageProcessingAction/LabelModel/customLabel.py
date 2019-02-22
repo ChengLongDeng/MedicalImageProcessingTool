@@ -3,7 +3,9 @@ from PyQt5.QtWidgets import QLabel
 from PyQt5.QtGui import QPainter, QPolygon, QPainterPath
 import ImageProcessingAction.LabelResponse.drawingGraphics as DG
 import ImageProcessingAction.LabelResponse.resizeImage as RI
+import ImageProcessingAction.LabelResponse.mouseMove as MM
 import ImageProcessingAction.Preprocessing.denoisingMethod as DM
+
 import cv2
 
 class labelModel(QLabel):
@@ -30,17 +32,6 @@ class labelModel(QLabel):
         self.var.polyFlag = False               # 判断是否选择多边形套索
         self.var.enlargeFlag = False            # 判断是否放大图像
         self.var.narrowFlag = False             # 判断是否缩小图像
-
-    # 在状态栏上显示
-    def valueChanged(self, event):
-
-        self.var.size.setText('(%d × %d)' % (self.var.width, self.var.height))                          # 状态栏显示图像大小
-        self.var.location.setText('(x : %d, y : %d, z : %d)' % (event.pos().x(), event.pos().y(), 0))   # 鼠标位置信息
-
-        if event.pos().x() >= self.var.width or event.pos().y() >= self.var.height:     # 鼠标所在位置超过图像大小
-            self.var.pixel.setText('(r : %d, g : %d, b : %d)' % (0, 0, 0))
-        else:
-            self.var.pixel.setText('(r : %d, g : %d, b : %d)' % (self.var.img[event.pos().y()][event.pos().x()][2], self.var.img[event.pos().y()][event.pos().x()][1], self.var.img[event.pos().y()][event.pos().x()][0]))  # 鼠标所在位置像素信息
 
     # 判断是否选择画笔
     def isDraw(self):
@@ -73,16 +64,28 @@ class labelModel(QLabel):
     # 鼠标移动事件
     def mouseMoveEvent(self, event):
         if self.var.trImageShow.pixmap():       # 判断是否加载图片
-            self.valueChanged(event)
+            if self.var.trFlag is False or self.var.coFlag is False or self.var.saFlag is False or self.var.tdFlag is False:  # 判断是否双击
+                MM.showInforInStatusBarWithOneImage(self.var, event)
+            else:
+                MM.showInforInStatusBarWithFourImage(self.var, event)
 
         if self.var.coImageShow.pixmap():       # 判断是否加载图片
-            self.valueChanged(event)
+            if self.var.trFlag is False or self.var.coFlag is False or self.var.saFlag is False or self.var.tdFlag is False:  # 判断是否双击
+                MM.showInforInStatusBarWithOneImage(self.var, event)
+            else:
+                MM.showInforInStatusBarWithFourImage(self.var, event)
 
         if self.var.saImageShow.pixmap():       # 判断是否加载图片
-            self.valueChanged(event)
+            if self.var.trFlag is False or self.var.coFlag is False or self.var.saFlag is False or self.var.tdFlag is False:  # 判断是否双击
+                MM.showInforInStatusBarWithOneImage(self.var, event)
+            else:
+                MM.showInforInStatusBarWithFourImage(self.var, event)
 
         if self.var.tdImageShow.pixmap():       # 判断是否加载图片
-            self.valueChanged(event)
+            if self.var.trFlag is False or self.var.coFlag is False or self.var.saFlag is False or self.var.tdFlag is False:  # 判断是否双击
+                MM.showInforInStatusBarWithOneImage(self.var, event)
+            else:
+                MM.showInforInStatusBarWithFourImage(self.var, event)
 
         if self.flag:                           # 记录坐标信息
             self.var.x1 = event.pos().x()
@@ -105,7 +108,7 @@ class labelModel(QLabel):
         if self.var.tdImageShow.pixmap():       # 判断是否加载图片
             self.statusChanged(event)
 
-        if self.var.trFlag is False or self.var.coFlag is False or self.var.saFlag is False or self.var.tdFlag is False:    #判断是否双击
+        if self.var.trFlag is False or self.var.coFlag is False or self.var.saFlag is False or self.var.tdFlag is False:    # 判断是否双击
             if self.var.enlargeFlag:
                 RI.enlargeImage(self.var, self, 50, 50)   # 放大图像
             elif self.var.narrowFlag:
@@ -122,22 +125,22 @@ class labelModel(QLabel):
 
         if self.var.rectFlag is True:   # 画矩形
 
-            if event.key() == Qt.Key_Enter or event.key() == Qt.Key_Return:     #小键盘和大键盘的回车键
+            if event.key() == Qt.Key_Enter or event.key() == Qt.Key_Return:     # 小键盘和大键盘的回车键
                 DG.drawRectByOpenCV(self.var, self)
 
         if self.var.elliFlag is True:   # 画椭圆形
 
-            if event.key() == Qt.Key_Enter or event.key() == Qt.Key_Return:  # 小键盘和大键盘的回车键
+            if event.key() == Qt.Key_Enter or event.key() == Qt.Key_Return:     # 小键盘和大键盘的回车键
                 DG.drawElliByOpenCV(self.var, self)
 
         if self.var.polyFlag is True:   # 画多边形
 
-            if event.key() == Qt.Key_Enter or event.key() == Qt.Key_Return:  # 小键盘和大键盘的回车键
+            if event.key() == Qt.Key_Enter or event.key() == Qt.Key_Return:     # 小键盘和大键盘的回车键
                 DG.drawPolyByOpenCV(self.var, self)
 
         if self.var.GSFlag is True:     # 高斯滤波
 
-            if event.key() == Qt.Key_Enter or event.key() == Qt.Key_Return:  # 小键盘和大键盘的回车键
+            if event.key() == Qt.Key_Enter or event.key() == Qt.Key_Return:     # 小键盘和大键盘的回车键
                 cv2.imwrite(self.var.img)
 
     # 滚轮事件

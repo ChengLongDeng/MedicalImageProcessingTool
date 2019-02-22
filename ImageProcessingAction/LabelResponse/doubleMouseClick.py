@@ -17,7 +17,7 @@ def settrLabelVisible(var):
             var.saImageShow.setVisible(False)
             var.tdImageShow.setVisible(False)
 
-            var.trImageShow.setPixmap(QPixmap(imageConvertion(var)))    # 从新显示图像
+            var.trImageShow.setPixmap(QPixmap(imageConvertion(var)))    # 重新显示图像
             var.trImageShow.setFixedSize(var.width, var.height)         # 设定大小
             var.trFlag = False
             setToolDisable(var)                                         # 放大、缩小工具不可用

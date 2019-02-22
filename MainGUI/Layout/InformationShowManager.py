@@ -8,13 +8,13 @@ def helpInforShow(var):
     helpInforDock = QDockWidget('帮助信息', var)
 
     helpContent = QTextEdit(var)
-    helpContent.setFrameShape(QFrame.Panel | QFrame.Sunken)  # 边框样式
-    helpContent.setAlignment(Qt.AlignVCenter | Qt.AlignLeft)  # 内容显示样式
+    helpContent.setFrameShape(QFrame.Panel | QFrame.Sunken)     # 边框样式
+    helpContent.setAlignment(Qt.AlignVCenter | Qt.AlignLeft)    # 内容显示样式
     helpContent.setEnabled(False)
     helpContent.setFocusPolicy(Qt.NoFocus)
-    helpContent.setLineWrapMode(QTextEdit.NoWrap)  # 一行文本不换行
-    helpContent.verticalScrollBar()  # 垂直滚动
-    helpContent.horizontalScrollBar()  # 水平滚动
+    helpContent.setLineWrapMode(QTextEdit.NoWrap)   # 一行文本不换行
+    helpContent.verticalScrollBar()                 # 垂直滚动
+    helpContent.horizontalScrollBar()               # 水平滚动
     helpContent.setPlaceholderText('此处显示帮助文档')
 
     helpInforDock.setFeatures(QDockWidget.NoDockWidgetFeatures)
@@ -82,7 +82,7 @@ def sliceManager(var):
 
     return sliceDock
 
-#调节图像亮度
+# 调节图像亮度
 def setLuminanceStatus(var):
 
     var.luminanceSlide.setEnabled(True)
@@ -101,7 +101,7 @@ def imageInforShow(var):
 
     return imageInforDock
 
-#显示空的图像区域
+# 显示空的图像区域
 def imageShow(var):
 
     imageLayout = QGridLayout()
@@ -115,7 +115,7 @@ def imageShow(var):
     # imageGroup.setLayout(imageLayout)
     return imageLayout
 
-#显示打开图像
+# 显示打开图像
 def openImageLayout(var, imagePixmap):
     var.imageShow.setTransverseImagePixmap(imagePixmap)
     var.imageShow.setCoronalImagePixmap(imagePixmap)

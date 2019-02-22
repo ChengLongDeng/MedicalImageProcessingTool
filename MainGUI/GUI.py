@@ -20,7 +20,7 @@ class GUI(QMainWindow):
         statusbarAchieve(self)                        # 状态栏设置
 
         self.statusBar().showMessage('准备')
-        self.setWindowTitle('医学图像处理工具')
+        self.setWindowTitle('宫颈癌辅助处理工具')
         self.resize(1100, 1100)
         self.center()
         # self.setStyleSheet('''background-color:white;''')
